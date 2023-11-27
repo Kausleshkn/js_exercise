@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random id Genrator</title>
+</head>
+<body>
+    <p>random id are below</p>
+    <p id = "demo"></p>
+<p>test</p>
+
+<script>
+    // task 1
+    // Modify the userIdGenerator function. Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+
+
+    let userIdGenerator = () => {
+
+        let char = +prompt("Enter Charecter, max 20 allowed:",)
+        let id = +prompt("Enter how much id you want to genrate:",)
+
+        let randonchar = ["hfDYh", "vBDFd", "vGHjk", "vHJb", 5, "dvGFH", "VGvgjh", "dchYTD", "biuCXd", "chdjh", 2, "jskKH", "ljTV", "ndhGZD", "HGJgu", "FMjv"]
+        let a = Math.floor(Math.random() * 10) + 5;
+        let sl = randonchar.slice(a, a + 1).join()
+        let c = Math.floor(Math.random() * 6);
+        let sl1 = randonchar.slice(c, c + 1).join()
+        let arr = [a, sl, c, sl1]
+
+        let chargerate = () => {
+            let char1 = ""
+            for (let i = 0; i <= char; i++) {
+
+                let b = Math.floor(Math.random() * 4);
+
+                if (char1.length < char) char1 += arr[b]
+
+            }
+            return char1;
+        }
+        let ids = []
+        for (let i = 0; i <= id; i++) {
+
+            if (ids.length !== id) {
+
+                let randomchar = chargerate();
+                ids.push(randomchar)
+            }
+        }
+        return ids;                    //`'${ids.join(" \n ")}
+// '`
+    }
+ 
+  let i = document.getElementById("demo").innerHTML = userIdGenerator().map(a=>document.write(a + "<br>"))   //.forEach(k=> document.write(k))
+    
+   console.log(i);
+   
+    
+</script>
+
+
+</body>
+</html>
